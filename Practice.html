@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CodingCup</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script> -->
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Coding<span id="logo">Cup</span> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Docs.html">Docs</a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Examples.html">Examples</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Practice.html">Practice</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <h1>Practice Problems</h1>
+        <hr>
+        <em><h5>Practice makes a man PERFECT,so keep going!!!!</h5></em>
+        <h4>Program to generate Fibonnaci series upto n numbers</h4>
+        <p class="intro">A Fibonnaci series is a series in which every term in the series is the sum of previous two terms.<br>For example, 1 1 2 3 5 8.....</p>
+        <button id="code" class="btn btn-outline-info">CODE</button>
+        <p class="code solution" style="overflow-y:scroll;">
+          #include&#60iostream&#62<br>
+            using namespace std;<br>
+            int main()<br>
+            {<br>
+                int n,x=0,y=1,nextterm;<br>
+                cout&#60"Enter a number: ";<br>
+                cin>>n;<br>
+                cout&#60"Series: ";<br>
+                for(int i=0;i&#60=n;i++)<br>
+                {<br>
+                    cout&#60x&#60" ";<br>
+                    nextterm=x+y;<br>
+                    x=y;<br>
+                    y=nextterm;<br>
+                }<br>
+                return 0;<br>
+            }<br>
+        </p>
+        <h4>Program that uses a class where the member functions are defined inside class</h4>
+        <p class="intro">You have to create a class where the member functions are defined inside the class itself. Those member function can be private or public. Also show their use in main function.</p>
+        <button id="code-2" class="btn btn-outline-info">CODE</button>
+        <p class="code solution2" style="overflow-y:scroll;">
+          #include&#60iostream&#62<br>
+            using namespace std;<br>
+            class A<br>
+            {<br>
+              int a,b;<br>
+              public:<br>
+               void setData(int x,int y)<br>
+               { a = x; b = y;}<br>
+               void display()<br>
+               {cout&#60"a:"&#60a&#60" b:"&#60b;}<br>
+            };<br>
+            int main()<br>
+            {<br>
+              A a1;<br>
+              a1.setData(3,4);<br>
+              a1.display();<br>
+              return 0;<br>
+            }<br>     
+        </p>
+        <h4>Program that uses a class where the member functions are defined outside class</h4>
+        <p class="intro">You have to create a class where the member functions are defined outside the class itself. Those member function should be public. Also show their use in main function.<br><em>Hint: Use scope resolution operator.</em></p>
+        <button id="code-3" class="btn btn-outline-info">CODE</button>
+        <p class="code solution3" style="overflow-y:scroll;">
+          #include&#60iostream&#62<br>
+            using namespace std;<br>
+            class A<br>
+            {<br>
+              int a,b;<br>
+              public:<br>
+               void setData(int x,int y);<br>
+               void display();<br>
+            };<br>
+            void A::setData(int x,int y)<br>
+              { a = x; b = y;}<br>
+            void A::display()<br>
+              {cout&#60&#60"a:"&#60&#60a&#60&#60" b:"&#60&#60b;}<br>
+            int main()<br>
+            {<br>
+              A a1;<br>
+              a1.setData(3,4);<br>
+              a1.display();<br>
+              return 0;<br>
+            }<br>
+            <h4>Program to demonstrate the use of zero arguments and parameterized constructors.</h4>
+            <p class="intro">Create a constructor that has no argumente and a constructor that has arguments. Call those constructor from main function.</p>
+            <button id="code-4" class="btn btn-outline-info">CODE</button>
+            <p class="code solution4" style="overflow-y:scroll;">
+              #include&#60iostream&#62<br>
+                using namespace std;<br>
+                class A<br>
+                {<br>
+                  int a,b;<br>
+                  public:<br>
+                  A(){ a = b = 0;}  //zero arguments<br>
+                  A(int x,int y)   //parameterized constructor<br>
+                   {a = x; b = y;}<br>
+                  void display()<br>
+                  {cout&#60&#60"a:"&#60&#60a&#60&#60" b:"&#60&#60b;}<br>
+                };<br>
+                int main()<br>
+                {<br>
+                  A a1,a2(3,4);<br>
+                  a1.display();<br>
+                  a2.display();<br>
+                  return 0;<br>
+                }<br>
+                <h4>Program which shows MultiLevel Inheritance</h4>
+                <p class="intro">You have create multiple class and establish a relationship among them using inheritance.Try to fetch the data from every class to show the inheitance.</p>
+                <button id="code-5" class="btn btn-outline-info">CODE</button>
+                <p class="code solution5" style="overflow-y:scroll;">
+                  #include&#60iostream&#62<br>
+                    using namespace std;<br>
+                    class A<br>
+                    {<br>
+                      public:<br>
+                          int a;<br>
+                      A()<br>
+                      { a = 10; }<br>
+                  };<br>
+                  class B:private A<br>
+                  {<br>
+                      public:<br>
+                          int b;<br>
+                      B()<br>
+                      { b = 5;}<br>
+                      int get()<br>
+                      { return a;}<br>
+                      void sum() <br>     
+                      { cout&#60a+b;}   <br>
+                  };<br>
+                  class C: public B<br>
+                  {<br>
+                      public:<br>
+                          int c;<br>
+                      C()    <br>
+                      { c = 20;}<br>
+                  };<br>
+                  <br>
+                  int main()<br>
+                  {<br>
+                      B b1;<br>
+                      C c1;<br>
+                      b1.sum();<br>
+                      cout&#60&#60"\n"&#60&#60c1.a&#60&#60" "&#60&#60c1.b&#60&#60" "&#60&#60c1.c&#60&#60endl;<br>
+                      return 0;<br>
+                  }<br>
+                <h4>Program to show function overloading</h4>
+                <p class="intro">You have to create more than one function with same name and with different arguments.Create as many functions as you want, then try to call each from the main function.</p>
+                <button id="code-6" class="btn btn-outline-info">CODE</button>
+                <p class="code solution6" style="overflow-y:scroll;">
+                  #include&#60iostream&#62<br>
+                    using namespace std;<br>
+                    class A<br>
+                    {<br>
+                      public:<br>
+                       void sum(int x,int y)     //overloaded function<br>
+                       { cout&#60&#60"Sum is "&#60&#60x+y;}<br>
+                       void sum(double i,double j)   //overloaded function<br>
+                       { cout&#60&#60"Sum is:"&#60&#60i+j;}<br>
+                       void sum(double i,double j,double k)    //overloaded function<br>
+                       { cout&#60&#60"Sum is:"&#60&#60i+j+k;}<br>
+                    };<br>
+                    int main()<br>
+                    {<br>
+                      A a1;<br>
+                      a1.sum(3,4);<br>
+                      a1.sum(12.5,2.5);<br>
+                      a1.sum(11.5,2.5,1.5);<br>
+                      return 0;<br>
+                    }<br>
+                    <h4>Program to demonstrate the overloading of * operator</h4>
+                    <p class="intro">You have to create a class where you have to define a method to overload * operator.</p>
+                    <button id="code-7" class="btn btn-outline-info">CODE</button>
+                    <p class="code solution7" style="overflow-y:scroll;">
+                      #include&#60iostream&#62<br>
+                        using namespace std;<br>
+                        class A<br>
+                        {<br>
+                          int a,b;<br>
+                          public:<br>
+                          A(){ a = b = 0;}<br>
+                          A(int x,int y)<br>
+                           {a = x; b = y;}<br>
+                          void display()<br>
+                          {cout&#60&#60"a:"&#60&#60a&#60&#60" b:"&#60&#60b;}<br>
+                          A operator* (int i)   //operator overloading<br>
+                          {<br>
+                            A temp;<br>
+                            temp.a = i*a;<br>
+                            temp.b = i*b;<br>
+                            return(temp);<br>
+                          }<br>
+                        };<br>
+                        int main()<br>
+                        {<br>
+                          A a1(3,4);<br>
+                          A a2;<br>
+                          a2 = a1*2;<br>
+                          a2.display();<br>
+                          return 0;<br>
+                        }<br>
+                     <h4>Program to demonstrate the overloading of increment and decrement operator.</h4>  
+                     <p class="intro">Similar as overloading of other operators. Just a slight difference in overloading of increment ans decrement operator.</p> 
+                     <button id="code-8" class="btn btn-outline-info">CODE</button>
+                     <p class="code solution8" style="overflow-y:scroll;">
+                       #include&#60iostream&#62<br>
+                         using namespace std;<br>
+                         class A<br>
+                         {<br>
+                          int a;<br>
+                          public:<br>
+                          void setData(int x)<br>
+                          { a = x;}<br>
+                          void display()<br>
+                          {cout&#60&#60"a:"&#60&#60a&#60&#60endl;}<br>
+                          A operator++(int)<br>
+                          {<br>
+                            A temp;<br>
+                            temp.a = a++;<br>
+                            return(temp);<br>
+                          }<br>
+                          A operator--(int)<br>
+                          {<br>
+                            A temp;<br>
+                            temp.a = a--;<br>
+                            return(temp);<br>
+                          }<br>
+                        };<br>
+                        int main()<br>
+                        {<br>
+                          A a1,a2,a3;<br>
+                          a1.setData(10);<br>
+                          a2 = a1++;<br>
+                          a2.display();<br>
+                          a3 = a1--;<br>
+                          a3.display();<br>
+                          return 0;<br>
+                        }
+                       <h4>Program to demonstrate the typecasting of basic type to class type</h4> 
+                       <p class="intro">Converting a basic type to class type needs the use of constructor.</p>
+                       <button id="code-9" class="btn btn-outline-info">CODE</button>
+                       <p class="code solution9" style="overflow-y:scroll;">
+                         #include&#60iostream&#62<br>
+                           using namespace std;<br>
+                           <br>
+                           class square<br>
+                           {<br>
+                             int a;<br>
+                             public:<br>
+                               void setData(int x)<br>
+                               { a=x;}<br>
+                               square(){}<br>
+                               square(int z) <br>
+                               {<br>
+                                 a=z;<br>
+                               }<br>
+                               void display()<br>
+                               {cout&#60&#60"a:"&#60&#60a&#60&#60endl;}<br>
+                           };<br>
+                           int main()<br>
+                           {<br>
+                             square s;<br>
+                             int x = 10;<br>
+                             s = x;<br>
+                             s.display();<br>
+                             return 0;<br>
+                           }
+                           <h4>Program to demonstrate the typecasting of one class type to another class type</h4> 
+                           <p class="intro">Converting a one class type to another class type can be done in either way by using constructors or by type casting operator.</p>
+                           <button id="code-10" class="btn btn-outline-info">CODE</button>
+                           <p class="code solution10" style="overflow-y:scroll;">
+                             #include&#60iostream&#62<br>
+                               using namespace std;<br>
+                               <br>
+                               class square<br>
+                               {<br>
+                                 int a;<br>
+                                 public:<br>
+                                   void setData(int x)<br>
+                                   { a=x;}<br>
+                                   int getValue()<br>
+                                   { return(a);}<br>
+                               };<br>
+                               class circle<br>
+                               {<br>
+                                 int r;<br>
+                                 public:<br>
+                                   void showData()<br>
+                                   {cout&#60&#60"r:"&#60&#60r&#60&#60endl;}<br>
+                                   circle(){}<br>
+                                   circle(square s1)<br>
+                                   {<br>
+                                     r = (s1.getValue());<br>
+                                   }<br>
+                               };<br>
+                               int main()<br>
+                               {<br>
+                                 square s;<br>
+                                 circle c;<br>
+                                 s.setData(5);<br>
+                                 c = s;<br>
+                                 c.showData();<br>
+                                 return 0;<br>
+                               }
+                              
+                      </div>
+    <script type="text/javascript" src="js.js"></script>
+    </body>
+    </html>

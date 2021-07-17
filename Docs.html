@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CodingCup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Coding<span id="logo">Cup</span> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Docs.html">Docs</a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Examples.html">Examples</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Practice.html">Practice</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+<div class="container-fluid">
+<h1>Object-Oriented Programming</h1>
+<hr>
+<h3>Copy Constructors</h3>
+<p>A Copy constructor is an overloaded constructor used to declare and initialize an object from another object.By Default, Complier cretes a Default constructor and a copy constructor.But if we create any contructor then complier does't create one.Copy constructor serves many purposes like when we want to convert one data type to other.
+  In the C++ programming language, a copy constructor is a special constructor for creating a new object as a copy of an existing object. Copy constructors are the standard way of copying objects in C++, as opposed to cloning, and have C++-specific nuances. The first argument of such a constructor is a reference to an object of the same type as is being constructed, which might be followed by parameters of any type.</p>
+<p class="code" style="overflow-y:scroll;">#include&#60iostream&#62<br>
+  using namespace std;<br>
+  class A<br>
+  {<br>
+    int a,b;<br>
+    public:<br>
+    A(int x, int y)     //copy constructor<br>
+     {a = x; b = y;}<br>
+    A(A &x)<br>
+    {  a = x.a;    b = x.b;   }<br>
+    void display()<br>
+    {cout&#60&#60"a:"&#60&#60a&#60&#60" b:&#60&#60"b;}<br>
+  };<br>
+  int main()<br>
+  {<br>
+    A a1(3,4);<br>
+    A a2(a1);<br>
+    a1.display();<br>
+    a2.display();<br>
+    return 0;<br>
+  }<br>
+  </p>
+<h3>MultiLevel Inheritance</h3>
+<p>Inheritance is one of the important principle of object-oriented programming.In Inheritance, the data member as well as the methods of Base class are inherited in derived class.Private data members are not accessible in derived class.In MultiLevel Inheritance,data members of class A are inherited by class B and data members of class B are inherited by class C.
+  If a class is derived from another derived class then it is called multilevel inheritance. So in C++ multilevel inheritance, a class has more than one parent class.
+</p>
+<p class="code" style="overflow-y:scroll">
+  #include&#60iostream&#62<br>
+    using namespace std;<br>
+    class A<br>
+    {<br>
+        public:<br>
+            int a;<br>
+        A()<br>
+        { a = 10; }<br>
+    };<br>
+    class B:public A<br>
+    {<br>
+        public:<br>
+            int b;<br>
+        B()<br>
+        { b = 5;}<br>
+        int get()<br>
+        { return a;}<br>
+        void sum() <br>     
+        { cout&#60&#60a+b;} <br>  
+    };<br>
+    class C: public B<br>
+    {<br>
+        public:<br>
+            int c;<br>
+        C()    <br>
+        { c = 20;}<br>
+    };<br>
+    <br>
+    int main()<br>
+    {<br>
+        B b1;<br>
+        C c1;<br>
+        b1.sum();<br>
+        cout&#60&#60"\n"&#60&#60c1.a&#60&#60" "&#60&#60c1.b&#60&#60" "&#60&#60c1.c&#60&#60endl;<br>
+        return 0;<br>
+    }<br>
+    
+</p>
+<h3>Function Overloading</h3>
+<p>C++ provides the right to have different functions with same name.Those functions although have same name but differ in number of arguments or the type of arguments.Like in a program to find sum of different data types, we can name those similar to improve the clearity of code.
+  Function overloading is a feature in C++ where two or more functions can have the same name but different parameters. When a function name is overloaded with different jobs it is called Function Overloading. In Function Overloading “Function” name should be the same and the arguments should be different.
+</p>
+<p class="code" style="overflow-y:scroll">
+  #include&#60iostream&#62<br>
+    using namespace std;<br>
+    class A<br>
+    {<br>
+      public:<br>
+       void sum(int x,int y)           //overloaded function<br>
+       { cout&#60&#60"Sum is "&#60&#60x+y;}<br>
+       void sum(double i,double j)      //overloaded function<br>
+       { cout&#60&#60"Sum is:"&#60&#60i+j;}<br>
+       void sum(double i,double j,double k)    //overloaded function<br>
+       { cout&#60&#60"Sum is:"&#60&#60i+j+k;}<br>
+    };<br>
+    int main()<br>
+    {<br>
+      A a1;<br>
+      a1.sum(3,4);           //this will call function with two int type arguments<br>    
+      a1.sum(12.5,2.5);       //this will call function with two double type arguments<br>
+      a1.sum(11.5,2.5,1.5);     //this will call function with three double type arguments<br>
+      return 0;<br>
+    }<br>
+    </p>
+<h3>Operator Overloading</h3>
+<p>In C++,we create a new data type with either structure or classes.But only creating data type is not sufficient, we also need to define some opertions to be performed on those data types.Here operator overloading plays an important role.Opertors are overload to perform same opertion on user-defined data types.
+  In C++, we can make operators to work for user defined classes. This means C++ has the ability to provide the operators with a special meaning for a data type, this ability is known as operator overloading. For example, we can overload an operator ‘+’ in a class like String so that we can concatenate two strings by just using +.
+</p>
+<p class="code" style="overflow-y:scroll">
+  #include&#60iostream&#62<br>
+    using namespace std;<br>
+    class A<br>
+    {<br>
+      int a,b;<br>
+      public:<br>
+      A(){ a = b = 0;}<br>
+      A(int x,int y)<br>
+       {a = x; b = y;}<br>
+      void display()<br>
+      {cout&#60&#60"a:"&#60&#60a&#60&#60" b:"&#60&#60b;}<br>
+      A operator+ (A x)         //operator overloading<br>
+      {<br>
+        A temp;<br>
+        temp.a = a + x.a;<br>
+        temp.b = b + x.b;<br>
+        return(temp);<br>
+      }<br>
+    };<br>
+    int main()<br>
+    {<br>
+      A a1(3,4),a2(5,6);<br>
+      A a3;<br>
+      a3 = a1+a2;<br>
+      a3.display();<br>
+      return 0;<br>
+    }<br>
+</p>
+</div>
+</body>
+</html>

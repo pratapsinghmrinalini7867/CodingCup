@@ -1,0 +1,144 @@
+body{
+    background-color: rgb(229, 158, 243);
+}
+.jumbotron{
+    background: url("coding.png") center center/cover ;
+    height: 300px;
+}
+/* #container{
+    width: 98%;
+    height: 100%;
+    background-color: white;
+    margin: 2% 0% 0% 1%;
+    padding: 2% 2% 2% 2%;
+    border-radius: 1%;
+} */
+.container-fluid{
+    width: 98%;
+    height: 100%;
+    background-color: white;
+    margin: 2% 0% 0% 1%;
+    padding: 2% 2% 2% 2%;
+    border-radius: 1%;
+}
+.box{
+    width: 350px;
+    height: 200px;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 2%;
+    align-self: center;
+    margin: 2% 7% 1% 10%;
+    float: left;
+    border-radius: 4%;
+    background: url("card-1.png") center center/cover;
+}
+.code{
+    border: 1px solid #DDDDDD;
+    padding: 10px 7px 5px;
+    height: 300px;
+    overflow:scroll;
+    overflow:hidden;
+    background-color: #F5F5F5;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    margin-top: 20px;
+}
+.intro{
+    border: 1px solid #DDDDDD;
+    background-color: #F5F5F5;
+    border-radius: 4px 4px 4px 4px;
+    padding: 10px 7px 5px 5px;
+}
+.li{
+    color: indigo;
+    font-weight: bold;
+    font-family: Merriewhether;
+}
+.ideas{
+    width: 300px;
+    height: 150px;
+    border: 5px solid #e4a95d;
+    border-radius: 5px;
+    text-align: center;
+    color: blueviolet;
+    font-weight: bold;
+    font-size: larger;
+    padding-top: 40px;
+    background-color: rgb(247, 215, 179);
+    float: left;
+    margin: 2% 5% 3% 3%;
+}
+.ideas:hover{
+    background-color: white;
+}
+h5,h3{
+    color: indigo;
+}
+h4{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+img{
+    width: 95%;
+    height: 400px;
+}
+/* .jumbotron{
+    background-color: rgb(250, 233, 207);
+} */
+video{
+    margin: 0% 20% 0% 20%;
+}
+#heading{
+    font-family: Broadway;
+}
+#cup{
+    color: rgb(248, 114, 208);
+}
+#coding{
+    color: white;
+}
+.navbar-brand{
+    font-family: Broadway;
+}
+#logo{
+    color: rgb(255, 174, 231);
+}
+.solution{
+    display: none;
+}
+.solution2{
+    display: none;
+}
+.solution3{
+    display: none;
+}
+.solution4{
+    display: none;
+}
+.solution5{
+    display: none;
+}
+.solution6{
+    display: none;
+}
+.solution7{
+    display: none;
+}
+.solution8{
+    display: none;
+}
+.solution9{
+    display: none;
+}
+.solution10{
+    display: none;
+}
+.show{
+    display: block;
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CodingCup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Coding<span id="logo">Cup</span> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Docs.html">Docs</a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Examples.html">Examples</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Practice.html">Practice</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+<div class="container-fluid">
+<h1>Examples</h1>
+<hr>
+<h5>Copy Constructors</h5>
+<p class="code" style="overflow-y:scroll;">#include&#60iostream&#62<br>
+  using namespace std;<br>
+  class A<br>
+  {<br>
+    int a,b;<br>
+    public:<br>
+    A(int x, int y)  //copy constructor<br>
+     {a = x; b = y;}<br>
+    A(A &x)<br>
+    {  a = x.a;    b = x.b;   }<br>
+    void display()<br>
+    {cout&#60&#60"a:"&#60&#60a&#60&#60" b:&#60&#60"b;}<br>
+  };<br>
+  int main()<br>
+  {<br>
+    A a1(3,4);<br>
+    A a2(a1);<br>
+    a1.display();<br>
+    a2.display();<br>
+    return 0;<br>
+  }<br>
+  </p>
+<h5>MultiLevel Inheritance</h5>
+<p class="code" style="overflow-y:scroll">
+  #include&#60iostream&#62<br>
+    using namespace std;<br>
+    class A<br>
+    {<br>
+        public:<br>
+            int a;<br>
+        A()<br>
+        { a = 10; }<br>
+    };<br>
+    class B:private A<br>
+    {<br>
+        public:<br>
+            int b;<br>
+        B()<br>
+        { b = 5;}<br>
+        int get()<br>
+        { return a;}<br>
+        void sum() <br>     
+        { cout&#60&#60a+b;} <br>  
+    };<br>
+    class C: public B<br>
+    {<br>
+        public:<br>
+            int c;<br>
+        C()    <br>
+        { c = 20;}<br>
+    };<br>
+    <br>
+    int main()<br>
+    {<br>
+        B b1;<br>
+        C c1;<br>
+        b1.sum();<br>
+        cout&#60&#60"\n"&#60&#60c1.a&#60&#60" "&#60&#60c1.b&#60&#60" "&#60&#60c1.c&#60&#60endl;<br>
+        return 0;<br>
+    }<br>
+    
+</p>
+<h5>Function Overloading</h5>
+<p class="code" style="overflow-y:scroll">
+  #include&#60iostream&#62<br>
+    using namespace std;<br>
+    class A<br>
+    {<br>
+      public:<br>
+       void sum(int x,int y)     //overloaded function<br>
+       { cout&#60&#60"Sum is "&#60&#60x+y;}<br>
+       void sum(double i,double j)   //overloaded function<br>
+       { cout&#60&#60"Sum is:"&#60&#60i+j;}<br>
+       void sum(double i,double j,double k)    //overloaded function<br>
+       { cout&#60&#60"Sum is:"&#60&#60i+j+k;}<br>
+    };<br>
+    int main()<br>
+    {<br>
+      A a1;<br>
+      a1.sum(3,4);<br>
+      a1.sum(12.5,2.5);<br>
+      a1.sum(11.5,2.5,1.5);<br>
+      return 0;<br>
+    }<br>
+    </p>
+<h5>Operator Overloading</h5>
+<p class="code" style="overflow-y:scroll">
+  #include&#60iostream&#62<br>
+    using namespace std;<br>
+    class A<br>
+    {<br>
+      int a,b;<br>
+      public:<br>
+      A(){ a = b = 0;}<br>
+      A(int x,int y)<br>
+       {a = x; b = y;}<br>
+      void display()<br>
+      {cout&#60&#60"a:"&#60&#60a&#60&#60" b:"&#60&#60b;}<br>
+      A operator+ (A x)   //operator overloading<br>
+      {<br>
+        A temp;<br>
+        temp.a = a + x.a;<br>
+        temp.b = b + x.b;<br>
+        return(temp);<br>
+      }<br>
+    };<br>
+    int main()<br>
+    {<br>
+      A a1(3,4),a2(5,6);<br>
+      A a3;<br>
+      a3 = a1+a2;<br>
+    a3.display();<br>
+      return 0;<br>
+    }<br>
+</p>
+<h5>Overloading of Incement and Decrement opertaor</h5>
+<p class="code" style="overflow-y:scroll;">#include&#60iostream&#62<br>
+  using namespace std;<br>
+  class A<br>
+  {<br>
+    int a;<br>
+    public:<br>
+    void setData(int x)<br>
+    { a = x;}<br>
+    void display()<br>
+    {cout&#60&#60"a:"&#60&#60a&#60&#60endl;}<br>
+    A operator++(int)<br>
+    {<br>
+      A temp;<br>
+      temp.a = a++;<br>
+      return(temp);<br>
+    }<br>
+    A operator--(int)<br>
+    {<br>
+      A temp;<br>
+      temp.a = a--;<br>
+      return(temp);<br>
+    }<br>
+  };<br>
+  int main()<br>
+  {<br>
+    A a1,a2,a3;<br>
+    a1.setData(10);<br>
+    a2 = a1++;<br>
+    a2.display();<br>
+    a3 = a1--;<br>
+    a3.display();<br>
+    return 0;<br>
+  }<br>
+  </p>
+<h4>Type Conversion</h4>
+<h5>Basic type to Class type</h5>
+<p class="code" style="overflow-y:scroll;">
+  #include&#60iostream&#62<br>
+  using namespace std;<br>
+ class square<br>
+  {<br>
+    int a;<br>
+    public:<br>
+      void setData(int x)<br>
+      { a=x;}<br>
+      square(){}<br>
+      //this method will convert int type to square type<br>
+      square(int z) <br>
+      {<br>
+        a=z;<br>
+      }<br>
+      void display()<br>
+      {cout&#60&#60"a:"&#60&#60a&#60&#60endl;}<br>
+  };<br>
+  int main()<br>
+  {<br>
+    square s;<br>
+    int x = 10;<br>
+    s = x;<br>
+    s.display();<br>
+    return 0;<br>
+  }<br>
+ </p>
+ <h5>Class type to Base type</h5>
+ <p class="code" style="overflow-y:scroll;">
+  #include&#60iostream&#62<br>
+  using namespace std;<br>
+  class square<br>
+ {<br>
+   int a;<br>
+   public:<br>
+     void setData(int x)<br>
+     { a=x;}<br>
+     int getValue()<br>
+    { return(a);}<br>
+    //Class Type to Primitive Type<br>
+     operator int() <br>
+     {<br>
+       return(a);<br>
+     }<br>
+     void display()<br>
+     {cout&#60&#60"a:"&#60&#60a&#60&#60endl;}<br>
+ };<br>
+ int main()<br>
+ {<br>
+   square s;<br>
+   s.setData(10);<br>
+   int x;<br>
+   x = s;<br>
+   cout&#60&#60"x:"&#60&#60x&#60&#60endl;<br>
+   s = x;<br>
+   s.display();<br>
+   return 0;<br>
+ }<br>
+</p>
+<h5>One class type to other class type</h5>
+<p class="code" style="overflow-y:scroll;">
+  #include&#60iostream&#62<br>
+  using namespace std;<br>
+  class square<br>
+ {<br>
+   int a;<br>
+   public:<br>
+     void setData(int x)<br>
+     { a=x;}<br>
+     int getValue()<br>
+     { return(a);}<br>
+ };<br>
+ class circle<br>
+ {<br>
+   int r;<br>
+   public:<br>
+     void showData()<br>
+     {cout&#60&#60"r:"&#60&#60r&#60&#60endl;}<br>
+     circle(){}<br>
+     circle(square s1)<br>
+     {<br>
+       r = (s1.getValue());<br>
+     }<br>
+ };<br>
+ int main()<br>
+ {<br>
+   square s;<br>
+   circle c;<br>
+   s.setData(5);<br>
+   c = s;<br>
+   c.showData();<br>
+   return 0;<br>
+ }<br>
+
+</div>
+<script type="text/javascript" src="js.js"></script>
+</body>
+</html>
